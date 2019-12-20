@@ -1,0 +1,44 @@
+html
+	head
+		title Post - #{title}
+		script(src='/libs/jquery/dist/jquery.min.js')
+		link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.min.css')
+		script(src='/libs/bootstrap/dist/js/bootstrap.min.js')
+		link(rel='stylesheet', href='/stylesheets/global.css')
+		link(rel='stylesheet', href='/stylesheets/newregister.css')
+	body
+		div(id="backimgur")
+			a(href="/") back to Imgur
+		.signin-container
+			a(href="/")
+				.signin-logo
+			div
+				.register-form.register-two-step
+					.register-step-one.register-visible
+						h1 Post Detail
+						br
+						.signin-imgur-register.core-dark.core-shadow.br5
+							input(type="text" class="br5 lvl1-dark valid" value='#{image.title}' readonly)
+							textarea(type="text" value='#{image.title}' class="br5 lvl1-dark" readonly)
+							img(src='#{image.url}' class="br5 lvl1-dark" style='max-width:150px; margin:10px')
+							input(type="text" class="br5 lvl1-dark valid" value='#{image.fullname}' readonly)
+							input(type="text" class="br5 lvl1-dark valid" value='#{image.created_at}' readonly)
+							input(type="hidden" id ="image-id" class="br5 lvl1-dark valid" value='#{image.id}' readonly)
+						br
+						hr
+						h1 Comments
+						if comments
+							.signin-imgur-register.core-dark.core-shadow.br5
+								each c in comments
+									input(type="text" class="br5 lvl1-dark valid" readonly value='#{c.content}')
+									label(style='font-size:xx-small; margin:2px;') By #{c.fullname} at #{c.created_at}
+						br
+						hr
+						if user
+							.signin-imgur-register.core-dark.core-shadow.br5
+								input(type="text" class="br5 lvl1-dark valid" id='comment')						
+							.register-next-buttons
+								.back-signin.text-shadow.right
+									button.btn-primary(id='post-comment') Post
+
+	script(src="/javascripts/comment.js")

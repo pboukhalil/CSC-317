@@ -1,0 +1,26 @@
+html
+	head
+		title Post - #{title}
+		script(src='/libs/jquery/dist/jquery.min.js')
+		link(rel='stylesheet', href='/libs/bootstrap/dist/css/bootstrap.min.css')
+		script(src='/libs/bootstrap/dist/js/bootstrap.min.js')
+		link(rel='stylesheet', href='/stylesheets/global.css')
+		link(rel='stylesheet', href='/stylesheets/newregister.css')
+	body
+		div(id="backimgur")
+			a(href="/") back to Imgur
+		.signin-container
+			a(href="/")
+				.signin-logo
+			div
+				.register-form.register-two-step
+					.register-step-one.register-visible
+						.signin-imgur-register.core-dark.core-shadow.br5
+							input(type="text" tabindex="5" name="title" maxlength="255" id="title" class="br5 lvl1-dark valid" placeholder="Title")
+							textarea(type="text" name="description" id="description" class="br5 lvl1-dark" placeholder="Description")
+							input(type="text" tabindex="6" name="url" maxlength="255" id="url" class="br5 lvl1-dark" placeholder="Image Url")
+						.register-next-buttons
+							.back-signin.text-shadow.right
+								button.btn-primary(id='submit') Post New
+
+	script(src="/javascripts/post.js")

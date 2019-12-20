@@ -1,0 +1,42 @@
+extends layout
+
+block content
+  div(id='root')
+    div.desktop-app.App
+      .App-container
+        .App-cover.NewCover.HomeCover.isCollapse(style='top: 0px; min-height: 0px;')
+          .SnowFlakesBg(style="position: absolute;")
+            canvas(width="1853" height="383")
+          .MoveContainer.Navbar.HomeNavbar(style='top: 0px;')
+            .NavbarMenuButton
+              .icon.icon-menu
+            .NavbarContainer-left
+              .Navbar-logo-container
+                a.Navbar-logo.active(aria-current="page", href="/")
+                  img(src="images/Navbar-logo.9c748ecccb607d5f3f00d7eee7a22f42.svg")
+                if user
+                  a.Button.upload(href="/post")
+                    img(src="images/icon-new-post.13ab64f9f36ad8f25ae3544b350e2ae1.svg")
+                    | New post
+            .NavbarContainer-center
+              .Searchbar
+                form.Searchbar-form
+                  input.Searchbar-textInput(placeholder="Title" type="text" value="" style="height: 36px;" name='query')
+                  button.Searchbar-submitInput(type="submit")
+                    img.search(src="images/icon-search.8d0f9b564a4659d48d8eca38b968a7f2.svg")
+            .NavbarContainer-right
+              .ProfileNavbar
+                if !user
+                  a.Navbar-signin(href="/signin") Sign in
+                  a.ButtonLink.Button.Navbar-signup(title="Sign up" href="/signup")
+                    span.Button-label Sign up 
+                else 
+                  a.ButtonLink.Button.Navbar-signup(title="Sign out" href="/signout")
+                    span.Button-label Sign out
+          if posts
+            each post in posts
+              .row(style='padding:10px')
+                .col-md-8
+                  img(style='max-width:150px').search(src="#{post.url}")
+                .col-md-4
+                  a(href='/posts/view/#{post.id}', style='font-size:large') #{post.title}

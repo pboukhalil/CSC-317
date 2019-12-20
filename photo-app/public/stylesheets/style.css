@@ -1,0 +1,303 @@
+body {
+  font-size: 100%;
+  font-family: Proxima Nova Regular,Helvetica Neue,Helvetica,Arial,sans-serif;
+  background-color: #2e3035;
+  color: #fff;
+  overflow-y: scroll;
+}
+
+.App {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.App-container {
+  width: 100%;
+}
+
+.App-cover {
+  width: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.NewCover {
+  transition: box-shadow .4s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-size: cover;
+  background-position: 50%;
+  background-color: #474a51;
+  padding-bottom: 76px;
+}
+
+.HomeCover.isCollapse {
+  background-position: bottom;
+}
+
+.HomeCover>.Navbar {
+  z-index: 1000;
+}
+
+.NewCover .HomeNavbar {
+  position: sticky;
+  position: -webkit-sticky;
+}
+
+.HomeNavbar {
+  padding: 10px;
+  position: fixed;
+  display: flex;
+  top: 0;
+}
+
+.Navbar {
+  width: 100%;
+  z-index: 1000;
+  text-align: center;
+  margin: 0 auto;
+}
+
+.NavbarMenuButton {
+  z-index: 1001;
+}
+
+.NavbarMenuButton .icon-menu {
+  display: none;
+  vertical-align: middle;
+  font-size: 25px;
+  margin: auto 14px;
+  position: absolute;
+  left: 10px;
+  top: 14px;
+  cursor: pointer;
+}
+
+.HomeNavbar .upload {
+  min-width: auto;
+  margin: auto 20px;
+  position: relative;
+}
+
+.Button {
+  text-align: center;
+  height: 35px;
+  display: inline-block;
+  padding: 7px 14px 10px 9px;
+  text-transform: none;
+  user-select: none;
+  touch-action: manipulation;
+  border-radius: 3px;
+  font-size: 15px;
+  font-weight: 700;
+  width: auto;
+  background-color: #1bb76e;
+  box-shadow: 0 6px 10px 0 rgba(27,28,30,.31);
+  color: #fff;
+  white-space: nowrap;
+}
+
+a {
+  color: #01b96b;
+  text-decoration: none;
+}
+
+.NavbarContainer-center {
+  max-width: 550px;
+  margin: auto;
+  align-items: center;
+  flex: 1 100%;
+  justify-content: space-around;
+}
+
+.HomeCover .Searchbar, .TagsCover .Searchbar {
+    margin: auto;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+
+.Searchbar {
+  position: relative;
+  float: right;
+  width: 100%;
+  max-width: 550px;
+}
+
+.Searchbar form {
+  width: 100%;
+}
+
+.Searchbar-textInput {
+  /* background: hsla(0,0%,100%,.25); */
+  border: 1px solid transparent;
+  padding: 8px 35px 8px 10px;
+  border-radius: 3px;
+  width: 100%;
+  outline: 0 none;
+  opacity: .8;
+  min-height: 36px;
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: .4px;
+  color: #fff;
+  text-shadow: inherit;
+  -webkit-text-fill-color: inherit;
+}
+
+.Searchbar-submitInput {
+  position: absolute;
+  font-size: 20px;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  background: transparent;
+  color: #fff;
+  border: 0;
+  outline: 0 none;
+  padding: 8px;
+  cursor: pointer;
+}
+
+form {
+  display: block;
+  margin-top: 0em;
+}
+
+.ProfileNavbar .Navbar-signin {
+  margin: auto 8px;
+  font-size: 15px;
+  font-weight: 600;
+  text-align: center;
+  color: #fff;
+  text-shadow: 0 14px 15px rgba(27,28,30,.31);
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.ProfileNavbar {
+  display: flex;
+}
+
+.HomeNavbar .Navbar-signup {
+  min-width: 108px;
+}
+.ProfileNavbar .Navbar-signup {
+  margin: auto;
+}
+.ButtonLink {
+  cursor: pointer;
+}
+.NewCover .SnowFlakesBg {
+  width: 100%;
+  overflow: hidden;
+  background-color: #171544;
+}
+
+#backimgur {
+  font-size: 13px;
+  line-height: 28px;
+  text-shadow: 1px 1px 1px rgba(0,0,0,.2);
+  position: fixed;
+  margin: 20px;
+  z-index: 10;
+  height: 30px;
+  padding-left: 15px;
+  background: url(/images/back-to-imgur.png) no-repeat;
+  cursor: pointer;
+  opacity: .9;
+}
+
+#backimgur a {
+  color: #fff;
+  text-decoration: none;
+}
+
+.full-width {
+  width: 100%;
+  height: 100%;
+  background: url(/images/signin-bg.jpg);
+  background-size: cover;
+  background-position: center center;
+  opacity: .35;
+  z-index: 1;
+}
+
+.signin-container {
+  position: relative;
+  width: 350px;
+  padding-top: 80px;
+  margin: auto;
+  z-index: 2;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+.signin-logo {
+  position: relative;
+  display: block;
+  margin: 0 auto 90px;
+  width: 187px;
+  height: 65px;
+  background: url(/images/access-logo.png) no-repeat;
+}
+
+.register-form .register-visible {
+  display: block;
+  max-height: 999px;
+  height: auto;
+  opacity: 1;
+}
+
+.register-form.register-step-one, .register-form .register-step-two {
+  display: none;
+  opacity: 0;
+  max-height: 0;
+  height: 0;
+  transition: opacity .25s ease-in;
+}
+
+.signin-imgur-register {
+  padding: 15px;
+  /* -webkit-transition: all .2s; */
+  transition: all .2s;
+}
+.core-dark {
+  background: #2C2F34;
+}
+
+input[type=text], input[type=password], input[type=email], input[type=tel], textarea {
+  font-family: inherit;
+  border: 1px solid transparent;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.1);
+  background-color: #191919;
+  outline: 0;
+  box-sizing: border-box;
+  padding: 5px 10px;
+  font-size: .9em;
+  line-height: 1.5em;
+  resize: none;
+  color: #f2f2f2;
+  margin-bottom: 10px;
+  letter-spacing: .02em;
+}
+
+.br5 {
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  border-radius: 5px;
+}
+
+.lvl1-dark {
+  background: #212121;
+}
+form {
+  display: block;
+  margin-top: 0em;
+}
